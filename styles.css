@@ -473,8 +473,117 @@ section {
 }
 
 /* ============================================
-   Footer
+   Servicios expandibles (ejemplos al click)
    ============================================ */
+
+.service--expandable {
+  cursor: default;
+  position: relative;
+}
+
+.service-expand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 6px 12px;
+  border: 1px solid var(--area-accent);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--area-accent);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.service-expand:hover {
+  background: var(--area-accent);
+  color: var(--color-paper);
+}
+
+.service-expand svg {
+  transition: transform 0.2s;
+}
+
+.service-expand[aria-expanded="true"] svg {
+  transform: rotate(45deg);
+}
+
+.service-example {
+  margin-top: 16px;
+  animation: expandIn 0.25s ease;
+}
+
+@keyframes expandIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.example-card {
+  background: var(--color-paper);
+  border: 0.5px solid var(--area-accent);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.example-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(0,0,0,0.03);
+  border-bottom: 0.5px solid rgba(0,0,0,0.06);
+}
+
+.example-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--area-accent);
+  background: rgba(0,0,0,0.04);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.example-header h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.example-body {
+  padding: 16px;
+}
+
+.example-specs {
+  display: grid;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--color-mute);
+  margin-bottom: 12px;
+}
+
+.example-specs strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.example-link {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--area-accent);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.example-link:hover {
+  opacity: 0.7;
+}
 
 .site-footer {
   padding: 28px 0;
