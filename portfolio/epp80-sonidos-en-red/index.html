@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPP 80 - Sonidos en Red | El Calafate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #2d3436;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: #2c3e6b;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #f0a830;
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header/Nav */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #2c3e6b;
+    }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      background: #4a90d9;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2c3e6b;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #f0a830;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #2c3e6b;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #e3f0ff 0%, #ffffff 100%);
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    .hero-icon {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #4a90d9, #2c3e6b);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      color: white;
+      font-size: 2.8rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 8px 30px rgba(74,144,217,0.3);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #2c3e6b;
+      margin-bottom: 8px;
+    }
+
+    .hero .subtitle {
+      font-size: 1.3rem;
+      color: #4a90d9;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: #f0a830;
+      color: white;
+      padding: 6px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-top: 16px;
+    }
+
+    /* Section */
+    section {
+      padding: 70px 0;
+    }
+
+    section:nth-child(even) {
+      background: #e3f0ff;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2::after {
+      margin: 8px auto 0;
+    }
+
+    /* Sobre la escuela */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+    }
+
+    .about-text strong {
+      color: #2c3e6b;
+    }
+
+    .about-image {
+      background: #d0e4fb;
+      border-radius: 16px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4a90d9;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    /* Sonidos en Red */
+    .sonidos-card {
+      background: white;
+      border-radius: 20px;
+      padding: 50px 40px;
+      text-align: center;
+      box-shadow: 0 6px 30px rgba(44,62,107,0.08);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .sonidos-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .sonidos-card p {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: #555;
+    }
+
+    .sonidos-features {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .sonidos-feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #2c3e6b;
+    }
+
+    .sonidos-feature span {
+      font-size: 1.4rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: #4a90d9;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2c3e6b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(74,144,217,0.3);
+    }
+
+    .btn-accent {
+      background: #f0a830;
+      color: white;
+    }
+
+    .btn-accent:hover {
+      background: #d49422;
+      transform: translateY(-2px);
+    }
+
+    .btn-green {
+      background: #27ae60;
+      color: white;
+    }
+
+    .btn-green:hover {
+      background: #1e8449;
+      transform: translateY(-2px);
+    }
+
+    /* Recursos */
+    .recursos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .recurso-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .recurso-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+    }
+
+    .recurso-icon {
+      font-size: 2.8rem;
+      margin-bottom: 14px;
+    }
+
+    .recurso-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .recurso-card p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .recurso-card .btn {
+      padding: 8px 20px;
+      font-size: 0.85rem;
+    }
+
+    /* Novedades */
+    .novedades-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .noticia-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transition: transform 0.3s;
+    }
+
+    .noticia-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .noticia-img {
+      height: 180px;
+      background: #d0e4fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4a90d9;
+      font-weight: 600;
+    }
+
+    .noticia-body {
+      padding: 20px;
+    }
+
+    .noticia-body .tag {
+      display: inline-block;
+      background: #e3f0ff;
+      color: #4a90d9;
+      padding: 3px 12px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .noticia-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .noticia-body p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .noticia-body .fecha {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 12px;
+    }
+
+    /* Galería */
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .galeria-item {
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: #d0e4fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4a90d9;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+
+    .galeria-item:hover {
+      transform: scale(1.02);
+    }
+
+    .galeria-item.tall {
+      grid-row: span 2;
+    }
+
+    .galeria-item.wide {
+      grid-column: span 2;
+    }
+
+    /* Contacto */
+    .contacto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contacto-info p {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contacto-info strong {
+      color: #2c3e6b;
+    }
+
+    .contacto-form input,
+    .contacto-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      transition: border-color 0.2s;
+    }
+
+    .contacto-form input:focus,
+    .contacto-form textarea:focus {
+      outline: none;
+      border-color: #4a90d9;
+    }
+
+    .contacto-form textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e6b;
+      color: #e3f0ff;
+      padding: 48px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+
+    footer h3 {
+      color: white;
+      margin-bottom: 14px;
+      font-size: 1.1rem;
+    }
+
+    footer p, footer a {
+      color: #b0c4e0;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #f0a830;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #8aa3c0;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .recursos-grid { grid-template-columns: repeat(2, 1fr); }
+      .novedades-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        background: white;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero h1 { font-size: 2.2rem; }
+      .hero .subtitle { font-size: 1.1rem; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .contacto-grid { grid-template-columns: 1fr; }
+      .novedades-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+
+      .recursos-grid { grid-template-columns: 1fr; }
+
+      .galeria-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 50px 0 40px; }
+      .hero h1 { font-size: 1.8rem; }
+      section { padding: 50px 0; }
+      h2 { font-size: 1.5rem; }
+      .sonidos-card { padding: 30px 20px; }
+      .sonidos-features { flex-direction: column; gap: 12px; }
+      .galeria-grid { grid-template-columns: 1fr; }
+      .galeria-item.wide, .galeria-item.tall { grid-column: span 1; grid-row: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <div class="logo-icon">EP</div>
+          EPP 80 El Calafate
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#sobre">Sobre la escuela</a></li>
+          <li><a href="#sonidos">Sonidos en Red</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#novedades">Novedades</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-icon">♫</div>
+      <h1>Escuela Primaria N° 80</h1>
+      <div class="subtitle">El Calafate, Santa Cruz</div>
+      <p>Una comunidad educativa comprometida con la formación integral, la inclusión y la innovación pedagógica a través del arte y la música.</p>
+      <div class="hero-badge">Proyecto Sonidos en Red</div>
+    </div>
+  </section>
+
+  <!-- Sobre la escuela -->
+  <section id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <h2>Sobre la escuela</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p><strong>Escuela Primaria N° 80</strong> es una institución educativa pública ubicada en la ciudad de <strong>El Calafate, provincia de Santa Cruz</strong>. Desde su fundación, trabaja por una educación inclusiva, participativa y de calidad, promoviendo valores como la solidaridad, el respeto y el compromiso con la comunidad.</p>
+          <p>Bajo la dirección de <strong>Laura</strong>, el equipo docente y directivo impulsa proyectos pedagógicos innovadores que integran las nuevas tecnologías y las expresiones artísticas como ejes transversales del aprendizaje.</p>
+          <p>Nuestra visión es formar estudiantes autónomos, críticos y creativos, capaces de desenvolverse en un mundo en constante cambio, con una sólida base en valores humanos y comunitarios.</p>
+        </div>
+        <div class="about-image">
+          📍 EPP 80 · El Calafate, Santa Cruz
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sonidos en Red -->
+  <section id="sonidos">
+    <div class="container">
+      <div class="section-header">
+        <h2>Sonidos en Red</h2>
+      </div>
+      <div class="sonidos-card">
+        <h3>🎵 Proyecto Musical Interactivo</h3>
+        <p>Sonidos en Red es una plataforma interactiva donde los estudiantes exploran, crean y comparten música de forma colaborativa. A través de herramientas digitales, los chicos aprenden ritmo, melodía y armonía mientras desarrollan habilidades de trabajo en equipo y expresión artística.</p>
+        <div class="sonidos-features">
+          <div class="sonidos-feature"><span>🎹</span> Instrumentos virtuales</div>
+          <div class="sonidos-feature"><span>🎤</span> Grabación colaborativa</div>
+          <div class="sonidos-feature"><span>📀</span> Biblioteca de sonidos</div>
+        </div>
+        <a href="#" class="btn btn-accent">Acceder a Sonidos en Red</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recursos por áreas -->
+  <section id="recursos">
+    <div class="container">
+      <div class="section-header">
+        <h2>Recursos por áreas</h2>
+      </div>
+      <div class="recursos-grid">
+        <div class="recurso-card">
+          <div class="recurso-icon">🔢</div>
+          <h3>Matemática</h3>
+          <p>Juegos numéricos, geometría interactiva y problemas para pensar en equipo.</p>
+          <a href="#" class="btn btn-primary">Explorar</a>
+        </div>
+        <div class="recurso-card">
+          <div class="recurso-icon">📖</div>
+          <h3>Lengua</h3>
+          <p>Lecturas, cuentos, producción escrita y actividades de comprensión lectora.</p>
+          <a href="#" class="btn btn-primary">Explorar</a>
+        </div>
+        <div class="recurso-card">
+          <div class="recurso-icon">🔬</div>
+          <h3>Ciencias</h3>
+          <p>Experimentos, exploración de la naturaleza y proyectos de indagación.</p>
+          <a href="#" class="btn btn-primary">Explorar</a>
+        </div>
+        <div class="recurso-card">
+          <div class="recurso-icon">🎵</div>
+          <h3>Música</h3>
+          <p>Ritmo, canciones, instrumentos y actividades del proyecto Sonidos en Red.</p>
+          <a href="#" class="btn btn-accent">Explorar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Novedades -->
+  <section id="novedades">
+    <div class="container">
+      <div class="section-header">
+        <h2>Novedades</h2>
+      </div>
+      <div class="novedades-grid">
+        <div class="noticia-card">
+          <div class="noticia-img">📸 Acto por el 25 de Mayo</div>
+          <div class="noticia-body">
+            <span class="tag">Eventos</span>
+            <h3>Acto Patrio: 25 de Mayo</h3>
+            <p>Los alumnos de todos los grados participaron del acto con presentaciones musicales, bailes tradicionales y una muestra de trabajos alusivos a la fecha patria.</p>
+            <div class="fecha">25 de mayo, 2026</div>
+          </div>
+        </div>
+        <div class="noticia-card">
+          <div class="noticia-img">🎵 Taller de Sonidos en Red</div>
+          <div class="noticia-body">
+            <span class="tag">Proyectos</span>
+            <h3>Nuevo taller interactivo de música</h3>
+            <p>Lanzamos el taller "Sonidos en Red" para 4to y 5to grado. Los estudiantes ya están explorando instrumentos virtuales y creando sus primeras composiciones grupales.</p>
+            <div class="fecha">10 de mayo, 2026</div>
+          </div>
+        </div>
+        <div class="noticia-card">
+          <div class="noticia-img">📚 Feria del Libro Escolar</div>
+          <div class="noticia-body">
+            <span class="tag">Actividades</span>
+            <h3>Feria del Libro y la Lectura</h3>
+            <p>Durante toda la semana celebramos la lectura con intercambio de libros, narraciones orales, talleres de poesía y la visita de autores locales.</p>
+            <div class="fecha">23 de abril, 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria">
+    <div class="container">
+      <div class="section-header">
+        <h2>Galería</h2>
+      </div>
+      <div class="galeria-grid">
+        <div class="galeria-item">📸 Actividades al aire libre</div>
+        <div class="galeria-item tall">📸 Taller de música</div>
+        <div class="galeria-item">📸 Clase de matemática</div>
+        <div class="galeria-item wide">📸 Feria del Libro - Panorámica</div>
+        <div class="galeria-item">📸 Acto patrio</div>
+        <div class="galeria-item">📸 Jornada deportiva</div>
+        <div class="galeria-item">📸 Huerta escolar</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contacto</h2>
+      </div>
+      <div class="contacto-grid">
+        <div class="contacto-info">
+          <p><strong>📍</strong> El Calafate, Santa Cruz, Argentina</p>
+          <p><strong>📞</strong> (02902) xxx-xxx</p>
+          <p><strong>✉️</strong> contacto@epp80.edu.ar</p>
+          <p><strong>👩‍🏫</strong> Directora: Laura</p>
+          <p style="margin-top:20px;">Horario de atención: lunes a viernes de 8:00 a 16:00 hs.</p>
+        </div>
+        <div class="contacto-form">
+          <form id="formContacto">
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="text" placeholder="Asunto">
+            <textarea placeholder="Escribí tu mensaje..." required></textarea>
+            <button type="submit" class="btn btn-green" style="width:100%;">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>EPP N° 80 - El Calafate</h3>
+          <p>Escuela Primaria Pública con proyecto educativo innovador y orientación musical. Comprometidos con la formación integral de niños y niñas de la comunidad calafateña.</p>
+        </div>
+        <div>
+          <h3>Enlaces</h3>
+          <p><a href="#inicio">Inicio</a></p>
+          <p><a href="#sobre">Sobre la escuela</a></p>
+          <p><a href="#sonidos">Sonidos en Red</a></p>
+          <p><a href="#recursos">Recursos</a></p>
+        </div>
+        <div>
+          <h3>Datos institucionales</h3>
+          <p>Directora: Laura</p>
+          <p>El Calafate, Santa Cruz</p>
+          <p>Argentina</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        EPP N° 80 — El Calafate, Santa Cruz © 2026. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+
+      if (toggle && navLinks) {
+        toggle.addEventListener('click', function() {
+          navLinks.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            navLinks.classList.remove('open');
+          });
+        });
+      }
+
+      const form = document.getElementById('formContacto');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('Gracias por contactarte con EPP 80. Te responderemos a la brevedad.');
+          form.reset();
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

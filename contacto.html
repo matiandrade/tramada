@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto · Tramada</title>
+  <meta name="description" content="Hablemos de tu proyecto. Contactanos por WhatsApp o mail. Tramada · estudio digital en El Calafate, Patagonia.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .contact-item-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-soft);
+    }
+    .contact-item-value {
+      font-size: 1.05rem;
+      color: var(--color-ink);
+      font-family: var(--font-display);
+    }
+    .contact-item-value a {
+      color: var(--color-clay);
+      text-decoration: none;
+    }
+    .contact-item-value a:hover {
+      text-decoration: underline;
+    }
+    .contact-form {
+      background: var(--color-stone);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-mute);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background: var(--color-paper);
+      border: 0.5px solid rgba(0,0,0,0.12);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--color-ink);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--color-clay);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-note {
+      font-size: 0.82rem;
+      color: var(--color-soft);
+      margin-top: 16px;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .form-note a {
+      color: var(--color-clay);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body data-area="instituciones">
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="logo">tramada<span class="dot">.</span></a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="educacion.html">Educación</a></li>
+          <li><a href="emprendedores.html">Emprendedores</a></li>
+          <li><a href="instituciones.html">Instituciones</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="area-header" style="border:none;">
+      <div class="container">
+        <div class="area-mark" style="background:var(--color-clay);"></div>
+        <p class="eyebrow" style="color:var(--color-clay);">Contacto</p>
+        <h1>Hablemos de tu proyecto.</h1>
+        <p class="lead">Contame qué necesitás y vemos cómo podemos trabajar juntos. Sin vueltas, sin compromiso.</p>
+      </div>
+    </section>
+
+    <section style="padding-top:0;">
+      <div class="container">
+        <div class="contact-grid">
+
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-item-label">WhatsApp</span>
+              <span class="contact-item-value"><a href="https://wa.me/5492966700433" target="_blank" rel="noopener">+54 9 2966 700433</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-label">Email</span>
+              <span class="contact-item-value"><a href="mailto:misapuntesdetodo@gmail.com">misapuntesdetodo@gmail.com</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-label">Ubicación</span>
+              <span class="contact-item-value">El Calafate, Patagonia</span>
+            </div>
+            <div style="margin-top:12px;">
+              <a href="https://wa.me/5492966700433?text=Hola,%20quiero%20consultar%20por%20un%20proyecto" class="btn btn-primary" style="background:var(--color-clay);" target="_blank" rel="noopener">Escribir por WhatsApp →</a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form onsubmit="event.preventDefault();alert('Gracias por tu mensaje. Te vamos a responder a la brevedad.');">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="tipo">Tipo de proyecto</label>
+                <select id="tipo" name="tipo">
+                  <option value="">Seleccioná una opción</option>
+                  <option value="emprendimiento">Web para mi emprendimiento</option>
+                  <option value="institucion">Web institucional</option>
+                  <option value="docente">Proyecto educativo / aula</option>
+                  <option value="renovacion">Renovar sitio existente</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="mensaje">Contame de tu proyecto</label>
+                <textarea id="mensaje" name="mensaje" placeholder="¿Qué necesitás? ¿Qué idea tenés en mente?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="background:var(--color-clay);width:100%;justify-content:center;">Enviar consulta</button>
+            </form>
+            <div class="form-note">
+              También podés escribir directamente por <a href="https://wa.me/5492966700433" target="_blank" rel="noopener">WhatsApp</a> para una respuesta más rápida.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="featured" style="background:var(--color-ink);color:var(--color-paper);">
+      <div class="container" style="text-align:center;">
+        <h2 style="max-width:560px;margin:0 auto 16px;font-weight:400;">No hace falta tener todo claro para escribirnos.</h2>
+        <p style="color:rgba(255,255,255,0.7);font-size:1.05rem;max-width:480px;margin:0 auto 32px;">A veces una conversación alcanza para empezar a ordenar la idea.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/5492966700433?text=Hola,%20tengo%20una%20consulta" class="btn btn-primary" style="background:var(--color-clay);" target="_blank" rel="noopener">Charlar por WhatsApp</a>
+          <a href="portfolio.html" class="btn btn-secondary" style="border-color:var(--color-paper);color:var(--color-paper);">Ver proyectos →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <span>tramada · El Calafate, Patagonia</span>
+      <span><a href="mailto:misapuntesdetodo@gmail.com" style="color:inherit;text-decoration:none;">misapuntesdetodo@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

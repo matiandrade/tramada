@@ -1,0 +1,76 @@
+[
+  {
+    "id": "piel-bonita",
+    "titulo": "Piel Bonita",
+    "slug": "piel-bonita",
+    "tipo": "Landing page comercial",
+    "cliente": "Centro de depilación láser y estética",
+    "ubicacion": "El Calafate, Santa Cruz",
+    "objetivo": "Captar turnos por WhatsApp",
+    "descripcion_corta": "Landing page comercial con tonos rosados y dorados, orientada a captación de turnos por WhatsApp.",
+    "descripcion_larga": "Sitio web diseñado para un centro de depilación láser y estética en El Calafate. Con un estilo femenino, elegante y cálido en tonos rosados, malva y detalles dorados, la página busca transmitir confianza y profesionalismo. Incluye secciones de inicio, servicios, beneficios, sobre nosotras, testimonios, FAQ, ubicación y contacto, con SEO básico y botón flotante de WhatsApp para facilitar la reserva de turnos.",
+    "secciones": [
+      "Inicio con hero",
+      "Servicios",
+      "Beneficios",
+      "Sobre nosotras",
+      "Testimonios",
+      "FAQ",
+      "Ubicación",
+      "Contacto",
+      "SEO básico",
+      "Botón flotante WhatsApp"
+    ],
+    "paleta": ["#f4e1e6", "#c88aa8", "#d4af37", "#ffffff", "#4a2c3a"],
+    "estilo": "Femenino, elegante, cálido",
+    "link_ejemplo": "portfolio/piel-bonita/"
+  },
+  {
+    "id": "sonidos-en-red",
+    "titulo": "EPP 80 / Sonidos en Red",
+    "slug": "sonidos-en-red",
+    "tipo": "Sitio institucional educativo con app musical",
+    "cliente": "Escuela Primaria N° 80 — proyecto educativo musical",
+    "ubicacion": "El Calafate, Santa Cruz",
+    "objetivo": "Presentar la escuela, compartir recursos y ofrecer app musical interactiva",
+    "descripcion_corta": "Sitio institucional para escuela primaria con proyecto educativo musical y app interactiva integrada.",
+    "descripcion_larga": "Portal institucional para la Escuela Primaria N° 80 que integra el proyecto Sonidos en Red, una aplicación musical educativa para estudiantes y familias. El sitio combina la presentación institucional con herramientas interactivas de aprendizaje musical. Incluye inicio, sobre la escuela, sección de Sonidos en Red con la app musical, recursos por áreas, novedades, galería multimedia y contacto. Diseñado con un estilo educativo, claro y moderno, accesible para toda la comunidad escolar.",
+    "secciones": [
+      "Inicio",
+      "Sobre la escuela",
+      "Sonidos en Red (app musical)",
+      "Recursos por áreas",
+      "Novedades",
+      "Galería",
+      "Contacto"
+    ],
+    "paleta": ["#2c6e6f", "#4a9e8f", "#f0f7f4", "#1a3c3a", "#e8d5b7"],
+    "estilo": "Educativo, claro, moderno, accesible",
+    "link_ejemplo": "portfolio/epp80-sonidos-en-red/"
+  },
+  {
+    "id": "tenink-aiken",
+    "titulo": "Escuela Especial N°5 \"Tenink Aiken\"",
+    "slug": "tenink-aiken",
+    "tipo": "Sitio institucional conmemorativo",
+    "cliente": "Escuela Especial — 40° aniversario",
+    "ubicacion": "El Calafate, Santa Cruz",
+    "objetivo": "Presentar historia, talleres, novedades y propuesta inclusiva",
+    "descripcion_corta": "Sitio conmemorativo por el 40° aniversario de la escuela especial en El Calafate, con enfoque inclusivo.",
+    "descripcion_larga": "Sitio web institucional creado para celebrar el 40° aniversario de la Escuela Especial N°5 Tenink Aiken en El Calafate. Con un estilo cálido, institucional e inclusivo, el diseño utiliza una paleta de tonos tierra, teal y dorado que refleja los valores de la comunidad educativa. Incluye hero institucional, sección de novedades, talleres, historia de la escuela, contacto, videos institucionales, galería de imágenes y enlaces externos a recursos. Todo el sitio está pensado con un fuerte enfoque de accesibilidad.",
+    "secciones": [
+      "Hero institucional",
+      "Novedades",
+      "Talleres",
+      "Historia",
+      "Contacto",
+      "Videos",
+      "Galería",
+      "Enlaces externos",
+      "Enfoque de accesibilidad"
+    ],
+    "paleta": ["#8b6f5e", "#5a7d7a", "#d4af37", "#f5efe8", "#3d2c25"],
+    "estilo": "Cálido, institucional, inclusivo",
+    "link_ejemplo": "portfolio/escuela-especial-5/"
+  }
+]

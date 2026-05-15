@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Tramada</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #f8f7f4;
+    color: #1a1a1a;
+    line-height: 1.6;
+    padding: 2rem 1rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  .card-header {
+    padding: 1.5rem 1.5rem 0.75rem 1.5rem;
+  }
+
+  .card-tipo {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+  }
+
+  .card-cliente {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+  }
+
+  .card-ubicacion {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .card-body {
+    padding: 0 1.5rem 1rem;
+    flex: 1;
+  }
+
+  .card-descripcion {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .paleta {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 1rem;
+  }
+
+  .paleta-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #eee;
+    cursor: help;
+  }
+
+  .card-footer {
+    padding: 0 1.5rem 1.5rem;
+    margin-top: auto;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    padding: 0.65rem 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: inherit;
+  }
+
+  .btn:hover { background: #333; }
+  .btn-demo {
+    background: transparent;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+    text-decoration: none;
+  }
+
+  .btn-demo:hover { background: #1a1a1a; color: #fff; }
+
+  .btn-secondary {
+    background: transparent;
+    color: #1a1a1a;
+    border: 2px solid #ddd;
+  }
+
+  .btn-secondary:hover { border-color: #999; background: #f5f5f5; }
+
+  /* Modal */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .modal-overlay.active {
+    display: flex;
+  }
+
+  .modal {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+    animation: modalIn 0.2s ease;
+  }
+
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.96) translateY(10px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .modal-close:hover { background: #f0f0f0; color: #333; }
+
+  .modal-tipo {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .modal-meta span strong { color: #333; }
+
+  .modal-descripcion {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-secciones h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    margin-bottom: 0.75rem;
+  }
+
+  .modal-secciones ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-secciones li {
+    background: #f5f5f5;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  .modal-paleta h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    margin-bottom: 0.5rem;
+  }
+
+  .modal-paleta .paleta { margin-bottom: 1rem; }
+
+  .modal-objetivo {
+    background: #f8f7f4;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-objetivo strong { color: #333; }
+
+  .footer-page {
+    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e0ddd8;
+    font-size: 0.85rem;
+    color: #999;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>Portfolio</h1>
+    <p>Proyectos web reales creados con Tramada.</p>
+  </header>
+
+  <div class="grid" id="portfolio-grid">
+    <!-- Cards se cargan desde JS -->
+  </div>
+
+  <footer class="footer-page">
+    Tramada &mdash; webs para emprendedores
+  </footer>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal-content">
+    <button class="modal-close" onclick="cerrarModal()">&times;</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// Cargar JSON
+let ejemplos = [];
+
+async function cargar() {
+  try {
+    const res = await fetch('portfolio-ejemplos.json');
+    ejemplos = await res.json();
+    renderizar();
+  } catch (e) {
+    document.getElementById('portfolio-grid').innerHTML =
+      '<p style="grid-column:1/-1;text-align:center;color:#999;">No se pudieron cargar los ejemplos.</p>';
+  }
+}
+
+function renderizar() {
+  const grid = document.getElementById('portfolio-grid');
+  grid.innerHTML = ejemplos.map((e, i) => `
+    <div class="card">
+      <div class="card-header">
+        <div class="card-tipo">${e.tipo}</div>
+        <div class="card-title">${e.titulo}</div>
+        <div class="card-cliente">${e.cliente}</div>
+        <div class="card-ubicacion">📍 ${e.ubicacion}</div>
+      </div>
+      <div class="card-body">
+        <div class="card-descripcion">${e.descripcion_corta}</div>
+        <div class="paleta">
+          ${e.paleta.map(c => `<div class="paleta-color" style="background:${c}" title="${c}"></div>`).join('')}
+        </div>
+      </div>
+      <div class="card-footer" style="display:flex;gap:0.5rem;flex-wrap:wrap">
+        <button class="btn" onclick="event.stopPropagation();abrirModal(${i})">Ver info</button>
+        ${e.link_ejemplo ? `<a href="${e.link_ejemplo}" class="btn btn-demo" target="_blank">Ver demo →</a>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function abrirModal(i) {
+  const e = ejemplos[i];
+  const body = document.getElementById('modal-body');
+  body.innerHTML = `
+    <div class="modal-tipo">${e.tipo}</div>
+    <div class="modal-title">${e.titulo}</div>
+    <div class="modal-meta">
+      <span><strong>Cliente:</strong> ${e.cliente}</span>
+      <span><strong>Ubicación:</strong> ${e.ubicacion}</span>
+      <span><strong>Estilo:</strong> ${e.estilo}</span>
+    </div>
+    <div class="modal-objetivo"><strong>Objetivo:</strong> ${e.objetivo}</div>
+    <div class="modal-descripcion">${e.descripcion_larga}</div>
+    <div class="modal-secciones">
+      <h3>Secciones incluidas</h3>
+      <ul>${e.secciones.map(s => `<li>${s}</li>`).join('')}</ul>
+    </div>
+    <div class="modal-paleta">
+      <h3>Paleta de colores</h3>
+      <div class="paleta">
+        ${e.paleta.map(c => `<div class="paleta-color" style="background:${c}" title="${c}"></div>`).join('')}
+      </div>
+    </div>
+    ${e.link_ejemplo ? `<a href="${e.link_ejemplo}" class="btn btn-demo" target="_blank" style="display:inline-flex;margin-top:0.5rem">Abrir demo completa →</a>` : ''}
+  `;
+  document.getElementById('modal-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Cerrar con click fuera del modal
+document.getElementById('modal-overlay').addEventListener('click', (ev) => {
+  if (ev.target === document.getElementById('modal-overlay')) cerrarModal();
+});
+
+// Cerrar con Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') cerrarModal();
+});
+
+cargar();
+</script>
+
+</body>
+</html>

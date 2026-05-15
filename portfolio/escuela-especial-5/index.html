@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escuela Especial N°5 "Tenink Aiken" - 40° Aniversario | El Calafate</title>
+<meta name="description" content="Escuela Especial N°5 Tenink Aiken de El Calafate, Santa Cruz. Celebrando 40 años de educación inclusiva. Talleres, historia, novedades y galería.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;color:#3d3d3d;background:#fff;line-height:1.7}
+h1,h2,h3,h4{font-family:'Merriweather',serif;font-weight:700;color:#3d3d3d;line-height:1.3}
+h2{font-size:2rem;text-align:center;margin-bottom:2.5rem;position:relative;color:#3a7d7a}
+h2:after{content:'';display:block;width:70px;height:3px;background:linear-gradient(90deg,#3a7d7a,#c9a84c);margin:0.8rem auto 0;border-radius:2px}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+section{padding:4.5rem 0}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 1.8rem;border-radius:8px;font-weight:600;text-decoration:none;transition:all 0.3s ease;border:none;cursor:pointer;font-size:0.95rem;font-family:'Nunito',sans-serif}
+.btn-primary{background:#3a7d7a;color:#fff}
+.btn-primary:hover{background:#2e6563;transform:translateY(-2px);box-shadow:0 4px 15px rgba(58,125,122,0.3)}
+.btn-gold{background:#c9a84c;color:#fff}
+.btn-gold:hover{background:#b8973e;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:#3a7d7a;border:2px solid #3a7d7a}
+.btn-outline:hover{background:#3a7d7a;color:#fff}
+.text-center{text-align:center}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,0.06)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.5rem;max-width:1100px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#3a7d7a;font-family:'Merriweather',serif;font-weight:900;font-size:1rem}
+.logo .logo-icon{width:40px;height:40px;background:linear-gradient(135deg,#3a7d7a,#c9a84c);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;font-weight:900}
+.logo .logo-text span{display:block;font-family:'Nunito',sans-serif;font-weight:300;font-size:0.75rem;color:#6b7a7a}
+nav a{color:#3d3d3d;text-decoration:none;margin-left:1.5rem;font-size:0.85rem;font-weight:600;transition:color 0.3s;position:relative}
+nav a:hover{color:#3a7d7a}
+.aniversario-badge{display:inline-block;background:linear-gradient(135deg,#c9a84c,#d4b85c);color:#fff;padding:0.2rem 0.8rem;border-radius:20px;font-size:0.75rem;font-weight:700;font-family:'Nunito',sans-serif;margin-left:0.6rem}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:#3a7d7a;cursor:pointer}
+
+/* Hero */
+.hero{min-height:90vh;display:flex;align-items:center;background:linear-gradient(135deg,#f5ebe0 0%,#e8f4f0 40%,#fff 100%);padding-top:5rem;position:relative;overflow:hidden}
+.hero:before{content:'40';position:absolute;font-family:'Merriweather',serif;font-size:25rem;font-weight:900;color:rgba(58,125,122,0.04);top:-5rem;right:-3rem;line-height:1;pointer-events:none}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;position:relative;z-index:1}
+.hero-content h1{font-size:2.8rem;margin-bottom:0.5rem;color:#3d3d3d}
+.hero-content h1 .highlight{color:#3a7d7a}
+.hero-content .subtitle{font-size:1.1rem;color:#5a6a6a;margin-bottom:0.5rem}
+.hero-content .aniversario{display:inline-block;background:linear-gradient(135deg,#3a7d7a,#c9a84c);color:#fff;padding:0.4rem 1.5rem;border-radius:30px;font-weight:700;font-size:1rem;margin-bottom:1.5rem;font-family:'Merriweather',serif}
+.hero-content p{font-size:1rem;color:#5a6a6a;margin-bottom:2rem;max-width:500px;line-height:1.8}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-image{text-align:center}
+.hero-badge-large{width:300px;height:300px;border-radius:50%;background:linear-gradient(135deg,#3a7d7a,#c9a84c);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto;color:#fff;box-shadow:0 10px 40px rgba(58,125,122,0.25)}
+.hero-badge-large .num{font-family:'Merriweather',serif;font-size:5rem;font-weight:900;line-height:1}
+.hero-badge-large .label{font-size:1rem;font-weight:300;opacity:0.9}
+.hero-badge-large .sub{font-size:0.8rem;font-weight:300;opacity:0.7;margin-top:0.3rem}
+
+/* Novedades */
+.novedades{background:#fff}
+.novedades-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.noticia-card{background:#f5ebe0;border-radius:16px;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s}
+.noticia-card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,0,0,0.08)}
+.noticia-img{height:180px;background:linear-gradient(135deg,#d4c4a8,#e8f4f0);display:flex;align-items:center;justify-content:center;color:#6b7a7a;font-size:0.9rem}
+.noticia-body{padding:1.5rem}
+.noticia-body .tag{display:inline-block;background:#3a7d7a;color:#fff;font-size:0.7rem;padding:0.2rem 0.7rem;border-radius:20px;font-weight:600;margin-bottom:0.6rem}
+.noticia-body h4{font-size:1.1rem;margin-bottom:0.5rem}
+.noticia-body p{font-size:0.9rem;color:#5a6a6a}
+.noticia-body .fecha{font-size:0.8rem;color:#8a9a9a;margin-top:0.5rem}
+
+/* Talleres */
+.talleres{background:#e8f4f0}
+.talleres-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.taller-card{background:#fff;border-radius:16px;padding:2rem;text-align:center;transition:all 0.3s;border-top:4px solid #c9a84c}
+.taller-card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(0,0,0,0.08)}
+.taller-icon{font-size:2.5rem;margin-bottom:1rem}
+.taller-card h4{font-size:1.1rem;margin-bottom:0.5rem}
+.taller-card p{font-size:0.9rem;color:#5a6a6a}
+
+/* Historia */
+.historia{background:#fff}
+.historia-intro{max-width:700px;margin:0 auto 3rem;text-align:center;font-size:1.05rem;color:#5a6a6a}
+.timeline{position:relative;max-width:700px;margin:0 auto;padding-left:3rem}
+.timeline:before{content:'';position:absolute;left:15px;top:0;bottom:0;width:3px;background:linear-gradient(180deg,#3a7d7a,#c9a84c)}
+.timeline-item{position:relative;margin-bottom:2.5rem;padding-left:2rem}
+.timeline-item:before{content:'';position:absolute;left:-3rem;top:0.3rem;width:30px;height:30px;border-radius:50%;background:#3a7d7a;border:4px solid #e8f4f0;box-shadow:0 0 0 3px #3a7d7a}
+.timeline-item .year{font-family:'Merriweather',serif;font-weight:900;color:#c9a84c;font-size:1.1rem;margin-bottom:0.2rem}
+.timeline-item p{color:#5a6a6a;font-size:0.95rem}
+
+/* Galeria */
+.galeria{background:#f5ebe0}
+.galeria-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.galeria-item{height:200px;border-radius:12px;background:linear-gradient(135deg,#d4c4a8,#e8f4f0);display:flex;align-items:center;justify-content:center;color:#6b7a7a;font-size:0.8rem;transition:transform 0.3s;overflow:hidden}
+.galeria-item:hover{transform:scale(1.03)}
+.galeria-item.wide{grid-column:span 2}
+.galeria-item.tall{grid-row:span 2;height:auto}
+.galeria-item.tall .placeholder{height:100%;display:flex;align-items:center;justify-content:center;padding:1rem}
+
+/* Videos */
+.videos{background:#fff}
+.videos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+.video-item{aspect-ratio:16/9;border-radius:12px;background:#e8f4f0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#3a7d7a;gap:0.5rem}
+.video-item .play-icon{font-size:3rem;opacity:0.6}
+.video-item span{font-size:0.85rem;font-weight:600}
+
+/* Enlaces */
+.enlaces{background:#e8f4f0}
+.enlaces-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.enlace-card{background:#fff;border-radius:12px;padding:1.5rem;text-align:center;text-decoration:none;color:#3d3d3d;transition:all 0.3s}
+.enlace-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+.enlace-card .icon{font-size:2rem;margin-bottom:0.5rem}
+.enlace-card h4{font-size:1rem;margin-bottom:0.3rem}
+.enlace-card p{font-size:0.85rem;color:#5a6a6a}
+
+/* Contacto */
+.contacto{background:#fff}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.contacto-info h3{font-size:1.3rem;margin-bottom:1.5rem}
+.contacto-info p{font-size:0.95rem;color:#5a6a6a;margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem}
+.contacto-info .icon{font-size:1.2rem}
+.contacto-form input,.contacto-form textarea{width:100%;padding:0.8rem 1rem;border:2px solid #e0e8e8;border-radius:10px;font-family:'Nunito',sans-serif;font-size:0.95rem;margin-bottom:1rem;transition:border-color 0.3s}
+.contacto-form input:focus,.contacto-form textarea:focus{outline:none;border-color:#3a7d7a}
+.contacto-form textarea{height:120px;resize:vertical}
+
+/* Footer */
+footer{background:#3d3d3d;color:#d4c4a8;padding:3rem 0;text-align:center}
+footer .footer-brand{font-family:'Merriweather',serif;font-size:1.2rem;margin-bottom:0.5rem;color:#c9a84c}
+footer p{font-size:0.85rem;margin-bottom:0.3rem;opacity:0.8}
+footer a{color:#c9a84c;text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* Accesibilidad */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+:focus{outline:3px solid #3a7d7a;outline-offset:2px}
+
+@media(max-width:768px){
+  .hero .container{grid-template-columns:1fr;text-align:center}
+  .hero:before{display:none}
+  .hero-content h1{font-size:2rem}
+  .hero-content p{margin:0 auto 2rem}
+  .hero-buttons{justify-content:center}
+  .hero-badge-large{width:200px;height:200px}
+  .hero-badge-large .num{font-size:3.5rem}
+  .novedades-grid,.talleres-grid,.enlaces-grid{grid-template-columns:1fr}
+  .galeria-grid{grid-template-columns:repeat(2,1fr)}
+  .videos-grid{grid-template-columns:1fr}
+  .contacto-grid{grid-template-columns:1fr}
+  h2{font-size:1.6rem}
+  section{padding:3rem 0}
+  .timeline{padding-left:2rem}
+  .timeline-item:before{left:-2.2rem;width:24px;height:24px}
+  nav{display:none;position:fixed;top:62px;left:0;right:0;background:rgba(255,255,255,0.98);flex-direction:column;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+  nav.show{display:flex}
+  nav a{margin:0.8rem 0;font-size:1rem}
+  .menu-toggle{display:block}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+<a href="#" class="logo"><div class="logo-icon">T</div><div class="logo-text">Tenink Aiken<span>Escuela Especial N°5</span></div></a>
+<span class="aniversario-badge">40° Aniversario</span>
+<button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')" aria-label="Menú">☰</button>
+<nav>
+<a href="#novedades">Novedades</a>
+<a href="#talleres">Talleres</a>
+<a href="#historia">Historia</a>
+<a href="#galeria">Galería</a>
+<a href="#videos">Videos</a>
+<a href="#enlaces">Enlaces</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="aniversario">🎉 40° Aniversario</div>
+<h1>Escuela Especial <span class="highlight">N°5</span><br>"Tenink Aiken"</h1>
+<p class="subtitle">El Calafate, Santa Cruz</p>
+<p>Desde 1984, construyendo una educación inclusiva que celebra la diversidad y potencia las capacidades de cada estudiante.</p>
+<div class="hero-buttons">
+<a href="#historia" class="btn btn-primary">Conocé nuestra historia</a>
+<a href="#talleres" class="btn btn-outline">Ver talleres</a>
+</div>
+</div>
+<div class="hero-image">
+<div class="hero-badge-large" aria-label="40 años">
+<span class="num">40</span>
+<span class="label">años</span>
+<span class="sub">1984 - 2024</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="novedades" id="novedades">
+<div class="container">
+<h2>📰 Novedades</h2>
+<div class="novedades-grid">
+<div class="noticia-card">
+<div class="noticia-img">📸 Acto 40° Aniversario</div>
+<div class="noticia-body">
+<span class="tag">Aniversario</span>
+<h4>Celebramos nuestros 40 años</h4>
+<p>Un emotivo acto con toda la comunidad educativa, ex alumnos, docentes y autoridades. Compartimos recuerdos y miramos hacia el futuro.</p>
+<p class="fecha">15 de noviembre, 2024</p>
+</div>
+</div>
+<div class="noticia-card">
+<div class="noticia-img">📸 Feria de Talleres</div>
+<div class="noticia-body">
+<span class="tag">Talleres</span>
+<h4>Feria anual de talleres 2024</h4>
+<p>Los estudiantes mostraron los trabajos realizados durante el año en los talleres de arte, música, cocina y huerta.</p>
+<p class="fecha">20 de octubre, 2024</p>
+</div>
+</div>
+<div class="noticia-card">
+<div class="noticia-img">📸 Jornada Inclusiva</div>
+<div class="noticia-body">
+<span class="tag">Comunidad</span>
+<h4>Jornada de puertas abiertas</h4>
+<p>Invitamos a toda la comunidad a conocer nuestro proyecto educativo inclusivo y las instalaciones de la escuela.</p>
+<p class="fecha">5 de septiembre, 2024</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="talleres" id="talleres">
+<div class="container">
+<h2>🎨 Nuestros Talleres</h2>
+<div class="talleres-grid">
+<div class="taller-card">
+<div class="taller-icon">🎨</div>
+<h4>Arte</h4>
+<p>Expresión plástica, pintura, escultura y manualidades para desarrollar la creatividad y la motricidad fina.</p>
+</div>
+<div class="taller-card">
+<div class="taller-icon">🎵</div>
+<h4>Música</h4>
+<p>Exploración sonora, percusión, canto y movimiento. La música como herramienta de expresión y comunicación.</p>
+</div>
+<div class="taller-card">
+<div class="taller-icon">🌱</div>
+<h4>Huerta</h4>
+<p>Contacto con la naturaleza, cuidado de plantas, cultivo estacional y alimentación saludable al aire libre.</p>
+</div>
+<div class="taller-card">
+<div class="taller-icon">🍳</div>
+<h4>Cocina</h4>
+<p>Preparación de recetas simples, hábitos alimenticios, trabajo en equipo y autonomía en la cocina.</p>
+</div>
+<div class="taller-card">
+<div class="taller-icon">🧩</div>
+<h4>Vida Autónoma</h4>
+<p>Habilidades para la vida diaria: organización, desplazamiento, comunicación y toma de decisiones.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="historia" id="historia">
+<div class="container">
+<h2>📖 Nuestra Historia</h2>
+<p class="historia-intro">La Escuela Especial N°5 "Tenink Aiken" nació en 1984 con el sueño de ofrecer una educación que abrace la diversidad. Cuatro décadas después, seguimos creciendo junto a nuestra comunidad.</p>
+<div class="timeline">
+<div class="timeline-item">
+<div class="year">1984</div>
+<p>Fundación de la escuela con el nombre "Tenink Aiken" (que significa "nuevo amanecer" en la lengua de los pueblos originarios de la región). Comienza con un pequeño grupo de estudiantes y docentes visionarios.</p>
+</div>
+<div class="timeline-item">
+<div class="year">1995</div>
+<p>Inauguración del edificio propio en El Calafate. La escuela amplía su matrícula y comienza a ofrecer talleres de formación laboral.</p>
+</div>
+<div class="timeline-item">
+<div class="year">2005</div>
+<p>Se incorporan los talleres de arte y música como ejes del proyecto pedagógico. La escuela se consolida como referente en educación inclusiva en la provincia.</p>
+</div>
+<div class="timeline-item">
+<div class="year">2014</div>
+<p>30° aniversario. Se inaugura el taller de huerta y cocina, integrando la educación ambiental y la alimentación saludable al proyecto institucional.</p>
+</div>
+<div class="timeline-item">
+<div class="year">2024</div>
+<p>Celebramos 40 años de educación inclusiva. La escuela sigue creciendo con nuevos talleres, tecnología y el compromiso de siempre: acompañar a cada estudiante en su camino.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="galeria" id="galeria">
+<div class="container">
+<h2>📸 Galería</h2>
+<div class="galeria-grid">
+<div class="galeria-item wide">📷 Acto 40° aniversario</div>
+<div class="galeria-item">📷 Taller de arte</div>
+<div class="galeria-item tall"><div class="placeholder">📷 Estudiantes<br>en clase</div></div>
+<div class="galeria-item">📷 Huerta escolar</div>
+<div class="galeria-item">📷 Música</div>
+<div class="galeria-item wide">📷 Feria de talleres</div>
+<div class="galeria-item">📷 Cocina</div>
+</div>
+</div>
+</section>
+
+<section class="videos" id="videos">
+<div class="container">
+<h2>🎥 Videos</h2>
+<div class="videos-grid">
+<div class="video-item">
+<span class="play-icon">▶️</span>
+<span>Video institucional 40° aniversario</span>
+</div>
+<div class="video-item">
+<span class="play-icon">▶️</span>
+<span>Feria de talleres 2024</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="enlaces" id="enlaces">
+<div class="container">
+<h2>🔗 Enlaces de Interés</h2>
+<div class="enlaces-grid">
+<a href="#" class="enlace-card">
+<div class="icon">🏛️</div>
+<h4>Consejo Provincial de Educación</h4>
+<p>Santa Cruz</p>
+</a>
+<a href="#" class="enlace-card">
+<div class="icon">🤝</div>
+<h4>Asociación Cooperadora</h4>
+<p>Sumate a colaborar</p>
+</a>
+<a href="#" class="enlace-card">
+<div class="icon">📚</div>
+<h4>Recursos de educación inclusiva</h4>
+<p>Material y herramientas</p>
+</a>
+</div>
+</div>
+</section>
+
+<section class="contacto" id="contacto">
+<div class="container">
+<h2>📞 Contacto</h2>
+<div class="contacto-grid">
+<div class="contacto-info">
+<h3>Comunicate con nosotros</h3>
+<p><span class="icon">📍</span> El Calafate, Santa Cruz</p>
+<p><span class="icon">📞</span> 2966-XXXXXX</p>
+<p><span class="icon">✉️</span> escuelatenink@educacionsc.gov.ar</p>
+<p><span class="icon">🕐</span> Lun a Vie 8:00 - 16:00 hs</p>
+</div>
+<form class="contacto-form" onsubmit="alert('Gracias por contactarte con la Escuela Tenink Aiken. Te responderemos a la brevedad.');return false">
+<input type="text" placeholder="Nombre" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Tu mensaje" required></textarea>
+<button type="submit" class="btn btn-primary">Enviar mensaje</button>
+</form>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-brand">Escuela Especial N°5 "Tenink Aiken"</div>
+<p>El Calafate — Santa Cruz — Argentina</p>
+<p>40 años de educación inclusiva 💙</p>
+<p style="margin-top:0.5rem;font-size:0.8rem;opacity:0.6">Desarrollado por Tramada</p>
+</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piel Bonita - Depilación Láser y Estética | El Calafate</title>
+<meta name="description" content="Centro de depilación láser y estética en El Calafate. Tratamientos faciales, corporales y depilación láser. Turnos por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#3d2b3d;background:#fff;line-height:1.6}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:600;color:#3d2b3d}
+h2{font-size:2.2rem;text-align:center;margin-bottom:3rem;position:relative}
+h2:after{content:'';display:block;width:60px;height:3px;background:linear-gradient(90deg,#d4af37,#c9a0b9);margin:0.8rem auto 0;border-radius:2px}
+.container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+section{padding:5rem 0}
+.btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.9rem 2rem;border-radius:50px;font-weight:500;text-decoration:none;transition:all 0.3s ease;border:none;cursor:pointer;font-size:0.95rem}
+.btn-primary{background:#c9a0b9;color:#fff}
+.btn-primary:hover{background:#b888a8;transform:translateY(-2px);box-shadow:0 4px 15px rgba(201,160,185,0.4)}
+.btn-whatsapp{background:#25D366;color:#fff}
+.btn-whatsapp:hover{background:#20bd5a;transform:translateY(-2px);box-shadow:0 4px 15px rgba(37,211,102,0.4)}
+.btn-outline{background:transparent;color:#c9a0b9;border:2px solid #c9a0b9}
+.btn-outline:hover{background:#c9a0b9;color:#fff}
+.btn-gold{background:#d4af37;color:#fff}
+.btn-gold:hover{background:#c4a030;transform:translateY(-2px);box-shadow:0 4px 15px rgba(212,175,55,0.4)}
+.text-center{text-align:center}
+
+/* Header */
+header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,0.06)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;max-width:1100px;margin:0 auto}
+.logo{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:#3d2b3d;text-decoration:none}
+.logo span{color:#c9a0b9}
+.logo .dot{color:#d4af37}
+nav a{color:#3d2b3d;text-decoration:none;margin-left:2rem;font-size:0.9rem;font-weight:400;transition:color 0.3s;position:relative}
+nav a:hover{color:#c9a0b9}
+nav a:after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#c9a0b9;transition:width 0.3s}
+nav a:hover:after{width:100%}
+.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:#3d2b3d;cursor:pointer}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;background:linear-gradient(135deg,#f8e8ee 0%,#fceef5 50%,#fff 100%);padding-top:5rem}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero-content h1{font-size:3.2rem;line-height:1.2;margin-bottom:1.5rem}
+.hero-content h1 span{color:#c9a0b9}
+.hero-content p{font-size:1.1rem;color:#6b5a6b;margin-bottom:2rem;max-width:500px}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-image{text-align:center}
+.hero-image .circle{width:400px;height:400px;border-radius:50%;background:linear-gradient(135deg,#f8e8ee,#e8b4c8);display:flex;align-items:center;justify-content:center;margin:0 auto;position:relative}
+.hero-image .circle-inner{width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,#d4af37,#c9a0b9);opacity:0.8}
+.hero-image .deco{position:absolute;width:100%;height:100%;border-radius:50%;border:2px dashed rgba(201,160,185,0.3);animation:spin 30s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Servicios */
+.servicios{background:#fff}
+.servicios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.servicio-card{background:#f8e8ee;padding:2.5rem 2rem;border-radius:20px;text-align:center;transition:all 0.3s}
+.servicio-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(200,160,185,0.2)}
+.servicio-icon{font-size:2.5rem;margin-bottom:1rem}
+.servicio-card h3{font-size:1.3rem;margin-bottom:0.8rem}
+.servicio-card p{font-size:0.9rem;color:#6b5a6b}
+
+/* Beneficios */
+.beneficios{background:linear-gradient(135deg,#f8e8ee,#fff)}
+.beneficios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.beneficio-item{text-align:center;padding:2rem}
+.beneficio-icon{font-size:2rem;margin-bottom:1rem}
+.beneficio-item h4{font-size:1.1rem;margin-bottom:0.5rem}
+.beneficio-item p{font-size:0.9rem;color:#6b5a6b}
+
+/* Sobre Nosotras */
+.sobre{background:#fff}
+.sobre .container{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.sobre-texto p{font-size:1.05rem;color:#6b5a6b;margin-bottom:1rem}
+.sobre-imagen{text-align:center}
+.sobre-imagen .placeholder{width:100%;max-width:400px;height:400px;border-radius:20px;background:linear-gradient(135deg,#f8e8ee,#e8b4c8);display:flex;align-items:center;justify-content:center;color:#c9a0b9;font-family:'Playfair Display',serif;font-size:1.2rem;margin:0 auto}
+
+/* Testimonios */
+.testimonios{background:#f8e8ee}
+.testimonios-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.testimonio-card{background:#fff;padding:2rem;border-radius:20px;position:relative}
+.testimonio-card:before{content:'"';font-family:'Playfair Display',serif;font-size:3rem;color:#d4af37;position:absolute;top:1rem;left:1.5rem;line-height:1}
+.testimonio-card p{font-size:0.95rem;color:#6b5a6b;margin-bottom:1rem;padding-top:1.5rem;font-style:italic}
+.testimonio-autor{font-weight:600;color:#3d2b3d;font-size:0.9rem}
+
+/* FAQ */
+.faq{background:#fff}
+.faq-list{max-width:700px;margin:0 auto}
+.faq-item{border-bottom:1px solid #f0e0e8;padding:1.2rem 0}
+.faq-question{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:500;font-size:1rem;color:#3d2b3d;background:none;border:none;width:100%;text-align:left;padding:0.5rem 0;font-family:'Inter',sans-serif}
+.faq-question .arrow{font-size:1.2rem;transition:transform 0.3s;color:#c9a0b9}
+.faq-question.active .arrow{transform:rotate(180deg)}
+.faq-answer{padding:0 0 0.5rem 0;font-size:0.9rem;color:#6b5a6b;display:none;line-height:1.7}
+.faq-answer.show{display:block}
+
+/* Ubicacion */
+.ubicacion{background:linear-gradient(135deg,#f8e8ee,#fff);text-align:center}
+.ubicacion p{font-size:1.05rem;color:#6b5a6b;margin-bottom:1rem}
+.ubicacion .direccion{font-weight:600;color:#3d2b3d;margin-bottom:2rem}
+.ubicacion-map{max-width:600px;margin:0 auto;height:250px;border-radius:20px;background:#e8d5e0;display:flex;align-items:center;justify-content:center;color:#6b5a6b}
+
+/* Contacto */
+.contacto{background:#fff}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.contacto-info h3{font-size:1.4rem;margin-bottom:1.5rem}
+.contacto-info p{font-size:0.95rem;color:#6b5a6b;margin-bottom:0.5rem}
+.contacto-info .contacto-item{display:flex;align-items:center;gap:0.8rem;margin-bottom:1rem}
+.contacto-info .contacto-icon{font-size:1.3rem}
+.contacto-form input,.contacto-form textarea{width:100%;padding:0.9rem 1.2rem;border:2px solid #f0e0e8;border-radius:12px;font-family:'Inter',sans-serif;font-size:0.95rem;margin-bottom:1rem;transition:border-color 0.3s;background:#faf5f7}
+.contacto-form input:focus,.contacto-form textarea:focus{outline:none;border-color:#c9a0b9}
+.contacto-form textarea{height:120px;resize:vertical}
+
+/* Footer */
+footer{background:#3d2b3d;color:#f0e0e8;padding:3rem 0;text-align:center}
+footer p{font-size:0.9rem;margin-bottom:0.5rem}
+footer .footer-brand{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;color:#d4af37}
+
+/* WhatsApp Float */
+.whatsapp-float{position:fixed;bottom:1.5rem;right:1.5rem;width:60px;height:60px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:999;cursor:pointer;transition:all 0.3s;text-decoration:none;color:#fff;font-size:1.8rem}
+.whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 25px rgba(37,211,102,0.5)}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero .container{grid-template-columns:1fr;text-align:center}
+  .hero-content h1{font-size:2.4rem}
+  .hero-content p{margin:0 auto 2rem}
+  .hero-buttons{justify-content:center}
+  .hero-image .circle{width:280px;height:280px}
+  .hero-image .circle-inner{width:140px;height:140px}
+  .servicios-grid,.beneficios-grid,.testimonios-grid{grid-template-columns:1fr}
+  .sobre .container{grid-template-columns:1fr;text-align:center}
+  .contacto-grid{grid-template-columns:1fr}
+  h2{font-size:1.8rem}
+  section{padding:3rem 0}
+  nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(255,255,255,0.98);flex-direction:column;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+  nav.show{display:flex}
+  nav a{margin:0.8rem 0;font-size:1.1rem}
+  .menu-toggle{display:block}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+<a href="#" class="logo">Piel<span>Bonita</span><span class="dot">.</span></a>
+<button class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('show')">☰</button>
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#beneficios">Beneficios</a>
+<a href="#sobre">Nosotras</a>
+<a href="#testimonios">Testimonios</a>
+<a href="#faq">FAQ</a>
+<a href="#ubicacion">Ubicación</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+
+<section class="hero" id="inicio">
+<div class="container">
+<div class="hero-content">
+<h1>Tu piel<br><span>merece lo mejor</span></h1>
+<p>Depilación láser y tratamientos estéticos en El Calafate. Cuidamos de vos con profesionalismo y calidez.</p>
+<div class="hero-buttons">
+<a href="https://wa.me/5492966XXXXXX" class="btn btn-whatsapp" target="_blank">📱 Turnos por WhatsApp</a>
+<a href="#servicios" class="btn btn-outline">Ver servicios</a>
+</div>
+</div>
+<div class="hero-image">
+<div class="circle">
+<div class="circle-inner"></div>
+<div class="deco"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="servicios" id="servicios">
+<div class="container">
+<h2>Nuestros Servicios</h2>
+<div class="servicios-grid">
+<div class="servicio-card">
+<div class="servicio-icon">✨</div>
+<h3>Depilación Láser</h3>
+<p>Tecnología de última generación para resultados duraderos en todas las zonas del cuerpo.</p>
+</div>
+<div class="servicio-card">
+<div class="servicio-icon">🌸</div>
+<h3>Tratamientos Faciales</h3>
+<p>Limpieza profunda, hidratación y revitalización para una piel radiante y saludable.</p>
+</div>
+<div class="servicio-card">
+<div class="servicio-icon">💆</div>
+<h3>Tratamientos Corporales</h3>
+<p>Masajes, exfoliación y modelación corporal para sentirte bien en tu propia piel.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="beneficios" id="beneficios">
+<div class="container">
+<h2>¿Por qué elegirnos?</h2>
+<div class="beneficios-grid">
+<div class="beneficio-item">
+<div class="beneficio-icon">🛡️</div>
+<h4>Profesionalismo</h4>
+<p>Equipo capacitado con experiencia en estética avanzada y depilación láser.</p>
+</div>
+<div class="beneficio-item">
+<div class="beneficio-icon">💎</div>
+<h4>Tecnología de punta</h4>
+<p>Equipos modernos para tratamientos seguros, efectivos y sin dolor.</p>
+</div>
+<div class="beneficio-item">
+<div class="beneficio-icon">❤️</div>
+<h4>Atención personalizada</h4>
+<p>Te acompañamos en cada paso con calidez y respeto por tus tiempos.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sobre" id="sobre">
+<div class="container">
+<div class="sobre-texto">
+<h2>Sobre Nosotras</h2>
+<p>En Piel Bonita creemos que el cuidado personal es un acto de amor propio. Somos un centro de estética en El Calafate dedicado a ayudarte a sentirte cómoda y radiante en tu propia piel.</p>
+<p>Detrás de cada tratamiento está Ana, nuestra fundadora, con más de 8 años de experiencia en estética y depilación láser. Nos apasiona ofrecer un servicio profesional en un ambiente cálido y femenino donde cada cliente se sienta como en casa.</p>
+<p>Trabajamos con productos de primera calidad y tecnología avanzada para garantizar resultados visibles y cuidado constante.</p>
+<a href="https://wa.me/5492966XXXXXX" class="btn btn-primary">Contactanos</a>
+</div>
+<div class="sobre-imagen">
+<div class="placeholder">🌸 Piel Bonita</div>
+</div>
+</div>
+</section>
+
+<section class="testimonios" id="testimonios">
+<div class="container">
+<h2>Lo que dicen nuestras clientas</h2>
+<div class="testimonios-grid">
+<div class="testimonio-card">
+<p>Desde que empecé con la depilación láser en Piel Bonita noté la diferencia. Ana es muy profesional y el ambiente es súper cálido. ¡100% recomendado!</p>
+<div class="testimonio-autor">— Carolina M.</div>
+</div>
+<div class="testimonio-card">
+<p>Los tratamientos faciales son increíbles. Mi piel cambió por completo. Además la atención es personalizada y amorosa. Me encanta ir.</p>
+<div class="testimonio-autor">— Valeria G.</div>
+</div>
+<div class="testimonio-card">
+<p>Elegí Piel Bonita por recomendación de una amiga y no me arrepiento. El lugar es hermoso, muy femenino y elegante. Súper recomendable.</p>
+<div class="testimonio-autor">— Sofía L.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="faq" id="faq">
+<div class="container">
+<h2>Preguntas Frecuentes</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">¿Cuántas sesiones de depilación láser necesito? <span class="arrow">▼</span></button>
+<div class="faq-answer">Generalmente se recomiendan entre 6 y 8 sesiones para resultados óptimos, dependiendo del tipo de piel y vello. Cada sesión se espacia cada 4-6 semanas.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">¿Duele la depilación láser? <span class="arrow">▼</span></button>
+<div class="faq-answer">Nuestro equipo cuenta con tecnología de última generación que minimiza las molestias. La mayoría de las clientas lo describen como una sensación de cosquilleo o pequeño pinchazo.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">¿Cómo saco un turno? <span class="arrow">▼</span></button>
+<div class="faq-answer">Podés contactarnos por WhatsApp al 2966-XXXXXX o completar el formulario de contacto en esta página. Te respondemos a la brevedad para coordinar el mejor horario.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question" onclick="toggleFaq(this)">¿Qué cuidados debo tener después de un tratamiento facial? <span class="arrow">▼</span></button>
+<div class="faq-answer">Evitar exposición al sol por 48 horas, no aplicar maquillaje el resto del día y usar protector solar. Te daremos indicaciones detalladas después de cada sesión.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="ubicacion" id="ubicacion">
+<div class="container">
+<h2>📍 Encontranos</h2>
+<p>Estamos en el centro de El Calafate, Santa Cruz.</p>
+<p class="direccion">Av. del Libertador 1234, El Calafate, Santa Cruz</p>
+<div class="ubicacion-map">🗺️ Mapa interactivo</div>
+</div>
+</section>
+
+<section class="contacto" id="contacto">
+<div class="container">
+<h2>Contacto</h2>
+<div class="contacto-grid">
+<div class="contacto-info">
+<h3>Hablemos</h3>
+<div class="contacto-item"><span class="contacto-icon">📍</span> Av. del Libertador 1234, El Calafate</div>
+<div class="contacto-item"><span class="contacto-icon">📱</span> 2966-XXXXXX</div>
+<div class="contacto-item"><span class="contacto-icon">✉️</span> info@pielbonita.com.ar</div>
+<div class="contacto-item"><span class="contacto-icon">🕐</span> Lun a Vie 10-20hs | Sáb 10-14hs</div>
+<a href="https://wa.me/5492966XXXXXX" class="btn btn-whatsapp" style="margin-top:1rem" target="_blank">📱 Escribinos por WhatsApp</a>
+</div>
+<form class="contacto-form" onsubmit="alert('Gracias por contactarte! Te responderemos a la brevedad.');return false">
+<input type="text" placeholder="Nombre" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="¿En qué podemos ayudarte?" required></textarea>
+<button type="submit" class="btn btn-primary">Enviar mensaje</button>
+</form>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-brand">Piel Bonita.</div>
+<p>Depilación láser y estética en El Calafate, Santa Cruz</p>
+<p>© 2025 Piel Bonita — Todos los derechos reservados</p>
+<p style="margin-top:0.5rem;font-size:0.8rem">Desarrollado por Tramada</p>
+</div>
+</footer>
+
+<a href="https://wa.me/5492966XXXXXX" class="whatsapp-float" target="_blank" aria-label="WhatsApp">📱</a>
+
+<script>
+function toggleFaq(btn){btn.classList.toggle('active');btn.nextElementSibling.classList.toggle('show')}
+</script>
+
+</body>
+</html>
