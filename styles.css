@@ -36,9 +36,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
+  overflow-x: hidden;
   font-family: var(--font-body);
   background: var(--color-paper);
   color: var(--color-ink);
@@ -114,6 +116,10 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav-wrap nav {
+  min-width: 0;
 }
 
 .logo {
@@ -726,14 +732,33 @@ section {
    Responsive
    ============================================ */
 
-@media (max-width: 768px) {
-  .nav-links {
-    gap: 16px;
-    font-size: 0.85rem;
+@media (max-width: 900px) {
+  .site-header {
+    padding: 16px 0;
   }
 
-  .nav-links a:nth-child(n+5) {
-    display: none;
+  .nav-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .nav-wrap nav {
+    width: 100%;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 10px 12px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    display: inline-flex;
+    padding: 6px 0;
+    font-size: 0.86rem;
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   .areas-grid {
@@ -817,6 +842,170 @@ section {
 
   section {
     padding: var(--gap-lg) 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .nav-wrap {
+    gap: 12px;
+  }
+
+  .nav-wrap nav {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .nav-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+    gap: 18px;
+    padding-bottom: 6px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .nav-links li {
+    flex: 0 0 auto;
+  }
+
+  .hero,
+  .area-header {
+    padding: 48px 0 34px;
+  }
+
+  .hero h1,
+  .area-header h1 {
+    font-size: clamp(2.4rem, 12vw, 4rem);
+    line-height: 1.05;
+    max-width: 100%;
+  }
+
+  .hero-lead,
+  .area-header .lead,
+  .manifesto h2 {
+    max-width: 100%;
+  }
+
+  .areas-grid,
+  .services-grid,
+  .ejemplos-grid,
+  .cases-grid,
+  .featured-wrap,
+  .real-example-wrap,
+  .portfolio-grid,
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .area-card {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+
+@media (max-width: 640px) {
+  .container {
+    width: 100%;
+    padding: 0 18px;
+  }
+
+  .site-header {
+    position: sticky;
+    padding: 14px 0 12px;
+  }
+
+  .logo {
+    font-size: 1.35rem;
+  }
+
+  .nav-links li,
+  .nav-links a {
+    min-width: 0;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+    font-size: 0.84rem;
+  }
+
+  .hero,
+  .area-header {
+    padding: 42px 0 30px;
+  }
+
+  .hero h1,
+  .area-header h1 {
+    font-size: clamp(2.4rem, 12vw, 4rem);
+    line-height: 1.05;
+    margin: 12px 0 16px;
+    max-width: 100%;
+  }
+
+  .hero-lead,
+  .area-header .lead {
+    font-size: 1rem;
+    line-height: 1.55;
+    max-width: 100%;
+  }
+
+  section,
+  .areas,
+  .services,
+  .featured,
+  .manifesto,
+  .cta,
+  .ejemplos-reales,
+  .institutional-cases,
+  .real-example {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .areas-grid,
+  .services-grid,
+  .ejemplos-grid,
+  .cases-grid,
+  .portfolio-grid,
+  .case-grid,
+  .featured-wrap,
+  .real-example-wrap {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .area-card,
+  .service,
+  .case-card,
+  .real-example-card,
+  .featured-visual,
+  .ejemplo-card {
+    width: 100%;
+    min-width: 0;
+    padding: 24px;
+  }
+
+  .area-card {
+    min-height: auto;
+  }
+
+  .cta-buttons,
+  .footer-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    justify-content: center;
+    width: 100%;
   }
 }
 
@@ -1286,5 +1475,31 @@ section {
   }
   .education-featured .education-card {
     order: 2;
+  }
+}
+
+/* Ajustes mobile finales: se ubican al final para cubrir secciones definidas m?s abajo. */
+@media (max-width: 900px) {
+  .real-example-wrap {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .real-example {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .real-example-wrap {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .real-example-card {
+    width: 100%;
+    min-width: 0;
+    padding: 24px;
   }
 }
